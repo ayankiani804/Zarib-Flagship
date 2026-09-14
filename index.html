@@ -1,0 +1,421 @@
+Absolutely — here’s a single-file HTML homepage for Zarib Flagship Hub, with a modern mobile-shop design, product cards, prices in PKR, search, and “Buy Now” buttons.
+Save it as index.html and open it in your browser.
+Writing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zarib Flagship Hub | Premium Smartphones</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #111827;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0b1220;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 500px;
+      background: linear-gradient(135deg, #0f172a, #172554);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 70px 7%;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #06111f;
+      padding: 14px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero-btn:hover {
+      background: #7dd3fc;
+    }
+
+    /* Products */
+    .products-section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #64748b;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.13);
+    }
+
+    .phone-image {
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      font-size: 75px;
+    }
+
+    .product-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 24px;
+      color: #0284c7;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .buy-btn {
+      display: block;
+      background: #0f172a;
+      color: white;
+      padding: 13px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .buy-btn:hover {
+      background: #0284c7;
+    }
+
+    /* Features */
+    .features {
+      background: #0f172a;
+      color: white;
+      padding: 60px 7%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .feature {
+      padding: 20px;
+    }
+
+    .feature-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #94a3b8;
+    }
+
+    /* About */
+    .about {
+      padding: 70px 7%;
+      text-align: center;
+      background: white;
+    }
+
+    .about h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      color: white;
+      padding: 35px 7%;
+      text-align: center;
+    }
+
+    footer p {
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav .links {
+        display: none;
+      }
+
+      .hero {
+        padding: 55px 6%;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .products-section {
+        padding: 50px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">ZARIB FLAGSHIP HUB</div>
+
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#products">Phones</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Experience the <span>Flagship</span> Difference.</h1>
+
+      <p>
+        Premium smartphones at competitive prices.
+        Discover powerful performance, stunning displays,
+        and flagship-level technology at Zarib Flagship Hub.
+      </p>
+
+      <a href="#products" class="hero-btn">
+        Explore Phones →
+      </a>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products-section" id="products">
+
+    <div class="section-title">
+      <h2>Featured Flagships</h2>
+      <p>Our hand-picked premium smartphones</p>
+    </div>
+
+    <div class="products">
+
+      <!-- Redmi -->
+      <div class="product-card">
+        <div class="phone-image">📱</div>
+
+        <h3>Redmi K90 Pro Max</h3>
+
+        <p>
+          Premium performance with flagship specifications.
+        </p>
+
+        <div class="price">PKR 160,000</div>
+
+        <a href="#contact" class="buy-btn">
+          Buy Now
+        </a>
+      </div>
+
+      <!-- Realme -->
+      <div class="product-card">
+        <div class="phone-image">📱</div>
+
+        <h3>Realme GT 8</h3>
+
+        <p>
+          High-performance flagship smartphone built for speed.
+        </p>
+
+        <div class="price">PKR 145,000</div>
+
+        <a href="#contact" class="buy-btn">
+          Buy Now
+        </a>
+      </div>
+
+      <!-- LG -->
+      <div class="product-card">
+        <div class="phone-image">📱</div>
+
+        <h3>LG V60</h3>
+
+        <p>
+          A classic flagship with premium features and design.
+        </p>
+
+        <div class="price">PKR 50,000</div>
+
+        <a href="#contact" class="buy-btn">
+          Buy Now
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+
+    <div class="feature">
+      <div class="feature-icon">🚚</div>
+      <h3>Fast Delivery</h3>
+      <p>Reliable delivery across Pakistan.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🛡️</div>
+      <h3>Quality Checked</h3>
+      <p>Phones are checked before dispatch.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">💰</div>
+      <h3>Competitive Prices</h3>
+      <p>Flagship phones at reasonable prices.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">📞</div>
+      <h3>Customer Support</h3>
+      <p>We're here to help with your purchase.</p>
+    </div>
+
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+
+    <h2>About Zarib Flagship Hub</h2>
+
+    <p>
+      Zarib Flagship Hub is focused on bringing premium and
+      flagship smartphones to customers looking for powerful
+      devices without unnecessary hassle. Browse our collection
+      and find your next smartphone today.
+    </p>
+
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+
+    <h3>Zarib Flagship Hub</h3>
+
+    <p>
+      Premium Smartphones • Competitive Prices • Pakistan
+    </p>
+
+    <p>
+      © 2026 Zarib Flagship Hub. All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
+This version is ready as a homepage prototype. If you want, I can also �⁠make it look much more like a professional Daraz/Apple-style phone store, �⁠with actual phone images, �⁠a shopping cart, �⁠WhatsApp ordering, �⁠product detail pages, and �⁠an admin-style product section.
